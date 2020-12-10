@@ -14,7 +14,7 @@ class SiteController extends Controller
 {
     public function news()
     {
-        return view('news', ['posts' => Post::all()]);
+        return view('news', ['posts' => Post::latest()->simplePaginate(5)]);
     }
 
     public function contact()
