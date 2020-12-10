@@ -1,0 +1,79 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.backgroundBody {
+  background-color: white;
+}
+
+.phone {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
+.link {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 15px;
+}
+
+.navMenu {
+  color: #242222;
+}
+
+.jumbotron p {
+  color: white;
+  font-size: 14px;
+}
+
+.jumbotron h1 {
+  color: white;
+  font-size: 60px;
+}
+
+.jumbotron h2 {
+  color: white;
+}
+
+.jumbotron lead {
+  color: white;
+}
+
+.promo {
+  background-image: url("/img/nara.jpeg");
+  background-size: cover;
+  text-align: center;
+}
+
+.spacePromo {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.text {
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+    #nav {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    #map {
+        width: 400px;
+    }
+}
+
+@media (max-width: 640px) {
+    #adv {
+        display: none;
+    }
+}
+
