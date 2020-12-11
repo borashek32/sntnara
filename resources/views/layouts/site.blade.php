@@ -19,6 +19,9 @@
         <div class="container">
             <div class="site-index">
                 <div class="jumbotron promo">
+                    <div class="phone">
+                        <a href="tel:+79169174630" class="textAddress">8(916)917-46-30</a>
+                    </div>
                     <p class="lead">249023, Калужская область,<br>
                         Жуковский район, д. Чубарово</p>
                     <h1 class="spacePromo">СНТ НАРА</h1>
@@ -34,10 +37,6 @@
                         @include('includes.contact_button')
                     </div>
                     @include('includes.messages_success')
-                    <div class="phone">
-                        Позвоните нам:<br>
-                        <a href="tel:+79169174630" class="textAddress">8(916)917-46-30</a>
-                    </div>
                 </div>
                 <div class="body-content">
                     <div class="row">

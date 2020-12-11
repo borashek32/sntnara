@@ -9,9 +9,12 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Jenssegers\Date\Date;
+
 
 class SiteController extends Controller
 {
+
     public function news()
     {
         return view('news', ['posts' => Post::latest()->simplePaginate(5)]);
@@ -30,11 +33,6 @@ class SiteController extends Controller
     public function docs()
     {
         return view('docs');
-    }
-
-    public function reviews()
-    {
-        return view('reviews');
     }
 
     protected function validator(array $data)

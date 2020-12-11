@@ -17,6 +17,11 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-top: 20px">
+                    <x-jet-nav-link href="{{ route('reviews-admin') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Отзывы') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-top: 20px">
                     <x-jet-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Профиль') }}
                     </x-jet-nav-link>

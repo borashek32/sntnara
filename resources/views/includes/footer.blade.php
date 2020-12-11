@@ -9,8 +9,8 @@
             <h6>СНТ НАРА</h6>
             <ul class="list-unstyled text">
                 <li><a class="text-muted" href="/">Наши новости</a></li>
-                <li><a class="text-muted" href="#">Документы</a></li>
-                <li><a class="text-muted" href="#">Отзывы и предложения</a></li>
+                <li><a class="text-muted" href="{{ route('docs') }}">Документы</a></li>
+                <li><a class="text-muted" href="{{ route('reviews') }}">Отзывы и предложения</a></li>
             </ul>
         </div>
         <div class="col-6 col-md">
