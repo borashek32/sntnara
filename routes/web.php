@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SiteController;
+use App\Http\Livewire\Docs;
 use App\Http\Livewire\Posts;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Reviews;

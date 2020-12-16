@@ -32,7 +32,7 @@ class SiteController extends Controller
 
     public function docs()
     {
-        return view('docs');
+        //
     }
 
     protected function validator(array $data)

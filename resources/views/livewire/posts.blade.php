@@ -39,16 +39,20 @@
                 <tr class="bg-gray-100">
                     <th class="border px-4 py-2 w-2">No.</th>
                     <th class="border px-4 py-2 w-10">Дата</th>
+                    <th class="border px-4 py-2 w-20">Документ/Фото</th>
                     <th class="border px-4 py-2 w-10">Название</th>
                     <th class="border px-4 py-2 w-24">Текст</th>
-                    <th class="border px-4 py-2 w-10">Действие</th>
+                    <th class="border px-4 py-2 w-16">Действие</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($posts as $post)
                     <tr>
                         <td class="border px-4 py-2">{{ $post->id }}</td>
-                        <td class="border px-4 py-2">{{ $post->created_at }}</td>
+                        <td class="border px-4 py-2">{{ Date::parse($post->created_at)->format('j F Y') }}</td>
+                        <td class="border px-4 py-2">
+                            <img src="{{ url('/storage/docs/' . $post->img) }}" class="w-60" alt="{{ $post->title }}" />
+                        </td>
                         <td class="border px-4 py-2">{{ $post->title }}</td>
                         <td class="border px-4 py-2">{{ $post->body }}</td>
                         <td class="border px-4 py-2">

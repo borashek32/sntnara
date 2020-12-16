@@ -27,7 +27,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-jet-button>
-                    {{ __('Ссылка для сброса пароля электронной почты') }}
+                    {{ __('Ссылка для сброса пароля') }}
                 </x-jet-button>
             </div>
         </form>
