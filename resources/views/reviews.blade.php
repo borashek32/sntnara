@@ -4,27 +4,25 @@
 
 @section('content')
     <h2>Отзывы и предложения</h2>
-    <form action="{{ route('reviews-form') }}" method="post" id="myForm" data-ajax-form>
-        @csrf
-        <div class="form-group">
-            <label class="p-1" for="name">Имя:</label>
-            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                   name="name" value="{{ old('name') }}" required autocomplete="name" minlength="2" autofocus>
-        </div>
-        <div class="form-group">
-            <label class="p-1" for="review">Отзыв или предложение:</label>
-            <textarea id="review" rows="7" type="review" class="form-control @error('review') is-invalid @enderror"
-                      name="review" value="{{ old('review') }}" required autocomplete="review"></textarea>
-        </div>
-        <p><button type="submit" class="btn btn-md btn-success">Отправить</button></p>
-    </form>
-    <script>
-        $('#myForm').validate();
-    </script>
+    <p>*Оставить отзыв или предложение могут только зарегистрированные пользователи</p>
+    <div class="card mb-4" style="padding:20px">
+        <form action="{{ route('reviews-form') }}" method="post" id="myForm" data-ajax-form>
+            @csrf
+            <div class="form-group">
+                <textarea id="review" placeholder="Введите ваш отзыв или предложение" rows="7" type="review" class="form-control @error('review') is-invalid @enderror"
+                          name="review" value="{{ old('review') }}" required autocomplete="review"></textarea>
+            </div>
+            <div class="row">
+                <div class="g-recaptcha" style="margin-left:20px;margin-top:20px;margin-bottom:20px" data-sitekey="6LdN-AgaAAAAAMAh8IPeiGknzhzY5MXnNabRtMTI"></div>
+                <input type="submit" value="Отправить" class="btn btn-md btn-success" style="width:120px;height:40px;margin-top:40px;margin-left:20px">
+            </div>
+        </form>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     @foreach($reviews as $review)
         <div class="card mb-4 bg-primary">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">{{ $review->name }}</li>
+                <li class="list-group-item">{{ $review->user->name }}</li>
                 <li class="list-group-item">{{ Date::parse($review->created_at)->format('j F Y') }}</li>
                 <li class="list-group-item">{{ $review->review }}</li>
             </ul>

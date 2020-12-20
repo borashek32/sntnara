@@ -29,9 +29,11 @@
             <textarea name="message" rows="7" id="message" class="form-control"
                       placeholder="Введите ваше сообщение" required minlength="10"></textarea>
         </div>
-        <p><button type="submit" class="btn btn-md btn-success">Отправить</button></p>
+        <div class="row">
+            <div class="g-recaptcha" style="margin-left:20px;margin-top:20px;margin-bottom:20px" data-sitekey="6LdN-AgaAAAAAMAh8IPeiGknzhzY5MXnNabRtMTI"></div>
+            <input type="submit" value="Отправить" class="btn btn-md btn-success" style="width:120px;height:40px;margin-top:40px;margin-left:20px">
+        </div>
+        </form>
     </form>
-    <script>
-        $('#myForm').validate();
-    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 @endsection('content')

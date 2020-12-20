@@ -13,6 +13,7 @@
                 <li class="list-group-item">{{ Date::parse($post->created_at)->format('j F Y') }}</li>
                 <li class="list-group-item">{{ $post->title }}</li>
                 <li class="list-group-item">{{ $post->body }}</li>
+                <li class="list-group-item"><a href="{{ route('post', $post->id) }}">Комментарии</a></li>
             </ul>
         </div>
     @endforeach

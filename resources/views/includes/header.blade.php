@@ -8,17 +8,19 @@
         <a class="p-2 text-dark" href="{{ route('map') }}">Как проехать</a>
         <a class="p-2 text-dark" href="{{ route('contacts') }}">Контакты</a>
     </nav>
-{{--    @if (Route::has('login'))--}}
-{{--        <div class="hidden fixed top-0 right-0 px-6 py-2 sm:block">--}}
-{{--            @auth--}}
-{{--                <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Личный кабинет</a>--}}
-{{--            @else--}}
-{{--                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Вход</a>--}}
+{{--    {{ Auth::user()->name }}--}}
 
-{{--                @if (Route::has('register'))--}}
-{{--                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Регистрация</a>--}}
-{{--                @endif--}}
-{{--            @endif--}}
-{{--        </div>--}}
-{{--    @endif--}}
+    @if (Route::has('login'))
+        <div class="hidden fixed top-0 right-0 px-6 py-2 sm:block">
+            @auth
+                <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Личный кабинет</a>
+            @else
+                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Вход</a>
+
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Регистрация</a>
+                @endif
+            @endif
+        </div>
+    @endif
 </div>
