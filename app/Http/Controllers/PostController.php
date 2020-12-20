@@ -24,17 +24,6 @@ class PostController extends Controller
     }
 
 
-//    public function addComment(Post $post)
-//    {
-//        Comment::create([
-//            'body' => request('body'),
-//            'post_id' => $post->id,
-//            'user_id' => auth()->user()->id
-//        ]);
-//        return back()->with('success', 'Ваше комментарий опубликован');
-//    }
-
-
     public function addComment(Request $request)
     {
         $comment = new Comment();
