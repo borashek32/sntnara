@@ -8,6 +8,7 @@
     <div class="card mb-4" style="padding:20px">
         <form action="{{ route('reviews-form') }}" method="post" id="myForm" data-ajax-form>
             @csrf
+            <h4>{{ Auth::user()->name }}</h4>
             <div class="form-group">
                 <textarea id="review" placeholder="Введите ваш отзыв или предложение" rows="7" type="review" class="form-control @error('review') is-invalid @enderror"
                           name="review" value="{{ old('review') }}" required autocomplete="review"></textarea>

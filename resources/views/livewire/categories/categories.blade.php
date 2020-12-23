@@ -1,6 +1,6 @@
 <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Управление отзывами
+        Управление категориями
     </h2>
 </x-slot>
 <div class="py-4">
@@ -17,8 +17,9 @@
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
             <div class="flex md:flex-row w-full">
                 <div class="w-full md:w-3/10 text-left">
+                    <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Новый пост</button>
                     @if($isOpen)
-                        @include('livewire.reviews.create')
+                        @include('livewire.categories.create')
                     @endif
                 </div>
                 <div class="w-full md:w-8/10 text-center">
@@ -38,30 +39,24 @@
                 <tr class="bg-gray-100">
                     <th class="border px-4 py-2 w-2">No.</th>
                     <th class="border px-4 py-2 w-10">Дата</th>
-                    <th class="border px-4 py-2 w-10">Имя</th>
-                    <th class="border px-4 py-2 w-24">Отзыв или предложение</th>
-                    <th class="border px-4 py-2 w-10">Действие</th>
+                    <th class="border px-4 py-2 w-20">Название</th>
+                    <th class="border px-4 py-2 w-16">Действие</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($reviews as $review)
+                @foreach($categories as $category)
                     <tr>
-                        <td class="border px-4 py-2">{{ $review->id }}</td>
-                        <td class="border px-4 py-2">{{ $review->created_at }}</td>
-                        <td class="border px-4 py-2">{{ $review->user }}</td>
-                        <td class="border px-4 py-2">{{ $review->review }}</td>
+                        <td class="border px-4 py-2">{{ $category->id }}</td>
+                        <td class="border px-4 py-2">{{ Date::parse($category->created_at)->format('j F Y') }}</td>
+                        <td class="border px-4 py-2">{{ $category->name }}</td>
                         <td class="border px-4 py-2">
-                            <button wire:click="edit({{ $review->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Редактировать</button>
-                            <button wire:click="delete({{ $review->id }})" class="mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Удалить</button>
+                            <button wire:click="edit({{ $category->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Редактировать</button>
+                            <button wire:click="delete({{ $category->id }})" class="mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Удалить</button>
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
-            <div class="mt-4">
-                {{ $reviews->links() }}
-            </div>
         </div>
     </div>
 </div>
-
