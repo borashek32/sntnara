@@ -59,6 +59,10 @@
   font-size: 18px;
 }
 
+.image {
+    width: 200px;
+}
+
 @media (max-width: 640px) {
     #nav {
         display: none;

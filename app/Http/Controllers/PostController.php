@@ -14,7 +14,7 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        return view('post', ['post' => $post]);
+        return view('site.post', ['post' => $post]);
     }
 
 

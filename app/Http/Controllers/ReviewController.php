@@ -10,7 +10,7 @@ class ReviewController extends Controller
 {
     public function reviewsPost(User $id)
     {
-        return view('reviews', ['reviews' => Review::all()]);
+        return view('site.reviews', ['reviews' => Review::all()]);
     }
 
 

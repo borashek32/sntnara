@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Contact;
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Hash;
@@ -17,22 +18,24 @@ class SiteController extends Controller
 
     public function news()
     {
-        return view('news', ['posts' => Post::latest()->simplePaginate(5)]);
+        $posts = Post::latest()->simplePaginate(5);
+        $cats = Category::all();
+        return view('site.news', compact('posts', 'cats'));
     }
 
     public function contact()
     {
-        return view('contact');
+        return view('site.contact');
     }
 
     public function map()
     {
-        return view('map');
+        return view('site.map');
     }
 
     public function docs()
     {
-        //
+        //return view('site.docs');
     }
 
     protected function validator(array $data)
