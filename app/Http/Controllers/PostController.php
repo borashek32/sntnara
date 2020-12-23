@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
@@ -13,8 +14,9 @@ class PostController extends Controller
     public function post(Post $id)
     {
         $post = Post::find($id);
+        $category = Category::where('id', '=', 'category_id')->get();
 
-        return view('site.post', ['post' => $post]);
+        return view('site.post', compact('category', 'post'));
     }
 
 

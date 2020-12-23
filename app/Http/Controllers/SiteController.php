@@ -19,8 +19,8 @@ class SiteController extends Controller
     public function news()
     {
         $posts = Post::latest()->simplePaginate(5);
-        $cats = Category::all();
-        return view('site.news', compact('posts', 'cats'));
+
+        return view('site.news', compact('posts'));
     }
 
     public function contact()
