@@ -20,19 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff671317-17ac-4ee0-81bc-896e38b58a71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Categories.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_23_150721_crete_categories_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/categories/categories.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/categories/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/reviews/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/reviews/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Reviews.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Reviews.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_23_150721_crete_categories_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/includes/menu-left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/menu-left.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/categories/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categories/categories.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categories/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/reviews/reviews.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/reviews/reviews.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/news.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/reviews.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reviews.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Архив.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +207,7 @@
       <workItem from="1607974347561" duration="15475000" />
       <workItem from="1608402430188" duration="22290000" />
       <workItem from="1608573231118" duration="1104000" />
-      <workItem from="1608735077538" duration="3650000" />
+      <workItem from="1608735077538" duration="7136000" />
     </task>
     <servers />
   </component>
@@ -229,6 +227,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608740545780">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1608740545780" />
     <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608736240539">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -237,5 +239,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="442" y="183" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1608428403984" />
+    <state x="539" y="380" key="NewPhpFileDialog" timestamp="1608742880068">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="539" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1608742880068" />
   </component>
 </project>

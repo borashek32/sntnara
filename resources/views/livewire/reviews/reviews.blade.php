@@ -48,7 +48,7 @@
                     <tr>
                         <td class="border px-4 py-2">{{ $review->id }}</td>
                         <td class="border px-4 py-2">{{ $review->created_at }}</td>
-                        <td class="border px-4 py-2">{{ $review->user }}</td>
+                        <td class="border px-4 py-2">{{ $review->user->name }}</td>
                         <td class="border px-4 py-2">{{ $review->review }}</td>
                         <td class="border px-4 py-2">
                             <button wire:click="edit({{ $review->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Редактировать</button>
@@ -58,9 +58,6 @@
                 @endforeach
                 </tbody>
             </table>
-            <div class="mt-4">
-                {{ $reviews->links() }}
-            </div>
         </div>
     </div>
 </div>

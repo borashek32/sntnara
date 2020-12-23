@@ -7,7 +7,7 @@ use App\Models\Category;
 
 class Categories extends Component
 {
-    public $categories, $name, $category_id;
+    public $category, $name, $category_id;
     public $isOpen = 0;
 
     public function render()
@@ -39,11 +39,11 @@ class Categories extends Component
     public function store()
     {
         $this->validate([
-            'name'   => 'required',
+            'name'   => 'required|max:20',
         ]);
 
         Category::updateOrCreate(['id' => $this->category_id], [
-            'name'    => $this->name
+            'name'    => $this->name,
         ]);
 
         session()->flash('message',

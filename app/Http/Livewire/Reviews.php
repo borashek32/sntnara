@@ -8,17 +8,14 @@ use Livewire\WithPagination;
 
 class Reviews extends Component
 {
-    public $name, $review, $review_id, $search;
+    public $name, $review, $review_id;
     public $isOpen = 0;
 
     use WithPagination;
 
     public function render()
     {
-        $search = '%' . $this->search . '%';
-        $reviews  = Review::where('name', 'LIKE', $search)
-            ->orWhere('review', 'LIKE', $search)
-            ->latest()->paginate(5);
+        $reviews  = Review::all();
         return view('livewire.reviews.reviews', ['reviews' => $reviews]);
     }
 

@@ -17,7 +17,7 @@
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
             <div class="flex md:flex-row w-full">
                 <div class="w-full md:w-3/10 text-left">
-                    <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Новый пост</button>
+                    <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Новая категория</button>
                     @if($isOpen)
                         @include('livewire.categories.create')
                     @endif
