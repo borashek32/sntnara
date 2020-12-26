@@ -23,6 +23,6 @@ class CategoryOne extends Component
         $posts  = Post::where('category_id', '=', $id)
             ->latest()
             ->paginate(4);
-        return view('livewire.category-one', ['posts' => $posts])->layout('layouts.site');
+        return view('livewire.categories.category-one', ['posts' => $posts])->layout('layouts.site');
     }
 }

@@ -7,7 +7,7 @@
     @foreach($posts as $post)
         <div class="card mb-4 bg-primary">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">{{ $post->category->name }}</li>
+                <li class="list-group-item">Категория: {{ $post->category->name }}</li>
                 <li class="list-group-item w-40" style="display: flex; justify-content: center;">
                     <img src="{{ url('/storage/docs/' . $post->img) }}" class="image" alt="{{ $post->title }}" />
                 </li>

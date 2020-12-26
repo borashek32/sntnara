@@ -19,7 +19,7 @@
                 <div class="w-full md:w-3/10 text-left">
                     <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Новый пост</button>
                     @if($isOpen)
-                        @include('livewire.create')
+                        @include('livewire.posts.create')
                     @endif
                 </div>
                 <div class="w-full md:w-8/10 text-center">
@@ -38,6 +38,7 @@
                 <thead>
                 <tr class="bg-gray-100">
                     <th class="border px-4 py-2 w-2">No.</th>
+                    <th class="border px-4 py-2 w-16">Категория</th>
                     <th class="border px-4 py-2 w-10">Дата</th>
                     <th class="border px-4 py-2 w-20">Документ/Фото</th>
                     <th class="border px-4 py-2 w-10">Название</th>
@@ -49,6 +50,7 @@
                 @foreach($posts as $post)
                     <tr>
                         <td class="border px-4 py-2">{{ $post->id }}</td>
+                        <td class="border px-4 py-2">{{ $post->category->name }}</td>
                         <td class="border px-4 py-2">{{ Date::parse($post->created_at)->format('j F Y') }}</td>
                         <td class="border px-4 py-2">
                             <img src="{{ url('/storage/docs/' . $post->img) }}" class="w-60" alt="{{ $post->title }}" />
@@ -56,8 +58,17 @@
                         <td class="border px-4 py-2">{{ $post->title }}</td>
                         <td class="border px-4 py-2">{{ $post->body }}</td>
                         <td class="border px-4 py-2">
-                            <button wire:click="edit({{ $post->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Редактировать</button>
-                            <button wire:click="delete({{ $post->id }})" class="mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Удалить</button>
+                            <button wire:click="edit({{ $post->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Редактировать
+                            </button>
+                            <button wire:click="delete({{ $post->id }})" class="mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                Удалить
+                            </button>
+                            <a href="{{ route('post', $post->id) }}">
+                                <button class="mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                                    Посмотреть
+                                </button>
+                            </a>
                         </td>
                     </tr>
                 @endforeach

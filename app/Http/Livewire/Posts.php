@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use Livewire\Component;
 use App\Models\Post;
 use Livewire\WithPagination;
@@ -9,11 +10,16 @@ use Livewire\WithFileUploads;
 
 class Posts extends Component
 {
-    public $title, $body, $post_id, $search, $img;
+    public $title, $categories, $category_id, $body, $post_id, $search, $img;
     public $isOpen = 0;
 
     use WithFileUploads;
     use WithPagination;
+
+    public function mount()
+    {
+        $this->categories = Category::all();
+    }
 
     public function render()
     {
@@ -21,7 +27,7 @@ class Posts extends Component
         $posts  = Post::where('title', 'LIKE', $search)
             ->orWhere('body', 'LIKE', $search)
             ->latest()->paginate(5);
-        return view('livewire.posts', ['posts' => $posts]);
+        return view('livewire.posts.posts', ['posts' => $posts]);
     }
 
     public function create()
@@ -40,24 +46,29 @@ class Posts extends Component
         $this->isOpen = false;
     }
 
-    private function resetInputFields(){
-        $this->title = '';
-        $this->body = '';
-        $this->post_id = '';
+    private function resetInputFields()
+    {
+        $this->category_id      =      '';
+        $this->title            =      '';
+        $this->body             =      '';
+        $this->post_id          =      '';
     }
 
     public function store()
     {
         $this->validate([
-            'title'   => 'required',
-            'body'    => 'required',
-            'img'     => 'image|max:1024'
+            'category_id'    =>    'required',
+            'title'          =>    'required',
+            'body'           =>    'required',
+            'img'            =>    'image|max:1024'
         ]);
 
-        Post::updateOrCreate(['id' => $this->post_id], [
-            'title'    => $this->title,
-            'body'     => $this->body,
-            'img'      => $this->img->hashName(),
+        Post::updateOrCreate(
+           ['id'             =>    $this->post_id],
+           ['category_id'    =>    $this->category_id,
+            'title'          =>    $this->title,
+            'body'           =>    $this->body,
+            'img'            =>    $this->img->hashName(),
         ]);
 
         if(!empty($this->img)) {
@@ -73,11 +84,12 @@ class Posts extends Component
 
     public function edit($id)
     {
-        $post = Post::findOrFail($id);
-        $this->post_id    = $id;
-        $this->title      = $post->title;
-        $this->body       = $post->body;
-        $this->img        = $post->img;
+        $post                   =     Post::findOrFail($id);
+        $this->category_id      =     $post->category_id;
+        $this->post_id          =     $id;
+        $this->title            =     $post->title;
+        $this->body             =     $post->body;
+        $this->img              =     $post->img;
         $this->openModal();
     }
 

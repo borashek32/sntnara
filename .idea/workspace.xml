@@ -20,11 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff671317-17ac-4ee0-81bc-896e38b58a71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/posts/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/category-one.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/category-one.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/CategoryMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/CategoryMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/CategoryOne.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/CategoryOne.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/category-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categories/category-menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/category-one.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categories/category-one.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts/posts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/news.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/post.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/reviews.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/reviews.blade.php" afterDir="false" />
@@ -173,19 +177,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/livewire/posts" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/livewire/posts" />
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/resources/views/livewire/categories" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/" />
+      <recent name="$PROJECT_DIR$/resources/views/livewire/categories" />
       <recent name="$PROJECT_DIR$/resources/views/site" />
       <recent name="$PROJECT_DIR$/resources/views/includes" />
-      <recent name="$PROJECT_DIR$/resources/views/livewire/categories" />
       <recent name="$PROJECT_DIR$/resources/views/auth" />
     </key>
   </component>
@@ -227,14 +233,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="485" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608928211028">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="485" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1608928211028" />
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608740545780">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1608740545780" />
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608754768851">
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608927749635">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1608754768851" />
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1608927749635" />
     <state x="442" y="183" key="NewPhpClassDialog" timestamp="1608428403984">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

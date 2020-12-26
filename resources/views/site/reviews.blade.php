@@ -10,8 +10,6 @@
             @csrf
             @if(auth()->user())
                 <h4>{{ Auth::user()->name }}</h4>
-            @else
-
             @endif
             <div class="form-group">
                 <textarea id="review" placeholder="Введите ваш отзыв или предложение" rows="7" type="review" class="form-control @error('review') is-invalid @enderror"

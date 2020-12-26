@@ -4,7 +4,7 @@
     @foreach($post as $post)
         <div class="card mb-4 bg-primary">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">{{ $post->category->name }}</li>
+                <li class="list-group-item">Категория: {{ $post->category->name }}</li>
                 <li class="list-group-item w-40" style="display: flex; justify-content: center;">
                     <img src="{{ url('/storage/docs/' . $post->img) }}" class="image" alt="{{ $post->title }}" />
                 </li>
@@ -18,6 +18,9 @@
         <form method="POST" action="{{ route('comment', $post->id) }}">
             {{ csrf_field() }}
             <input type="hidden" name="post_id" value="{{ $post->id }}">
+            @if(auth()->user())
+                <h6>{{ Auth::user()->name }}</h6>
+            @endif
             <textarea name="body" rows="3" id="body" class="form-control"
                       placeholder="Введите ваш комментарий" required minlength="5"></textarea>
             <input type="submit" value="Добавить комментарий" class="btn btn-md btn-success"
