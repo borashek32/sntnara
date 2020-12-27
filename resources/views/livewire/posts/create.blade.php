@@ -13,7 +13,7 @@
                     <div class="">
                         <p style="margin-bottom: 10px">Новый пост</p>
                         <div class="mb-4">
-                            <select wire:modal="category_id" class="form-select" aria-label="Default select example">
+                            <select wire:model="category_id" class="form-select" aria-label="Default select example">
                                 <option selected>Выберите категорию</option>
                                 @foreach($categories as $category)
                                     <option value="{{ $category->id }}">
@@ -23,20 +23,6 @@
                                 @error('category_id') <span class="text-red-500">{{ $message }}</span>@enderror
                             </select>
                         </div>
-
-{{--                        <div class="mb-4">--}}
-{{--                            <div class="form-check">--}}
-{{--                                @foreach($categories as $category)--}}
-{{--                                    <input type="radio" value="{{ $category->id }}" name="{{ $category->name }}"--}}
-{{--                                           wire:modal="category_id" class="form-check-input" id="flexCheckDefault" />--}}
-{{--                                    <label class="form-check-label" for="flexCheckDefault">--}}
-{{--                                        {{ $category->name }}--}}
-{{--                                    </label>--}}
-{{--                                @endforeach--}}
-{{--                                @error('category_id') <span class="text-red-500">{{ $message }}</span>@enderror--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
                         <div class="mb-4">
                             <label for="exampleFormControlInput1" class="block text-gray-700 text-sm font-bold mb-2">
                                 Документ или фото:

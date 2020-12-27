@@ -24,10 +24,12 @@ class Posts extends Component
     public function render()
     {
         $search = '%' . $this->search . '%';
-        $posts  = Post::where('title', 'LIKE', $search)
+        $posts = Post::where('title', 'LIKE', $search)
             ->orWhere('body', 'LIKE', $search)
-            ->latest()->paginate(5);
-        return view('livewire.posts.posts', ['posts' => $posts]);
+            ->latest()
+            ->paginate(5);
+
+        return view('livewire.posts.posts', ['posts' => $posts])->layout('layouts.app');
     }
 
     public function create()
