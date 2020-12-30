@@ -17,9 +17,14 @@ class SiteController extends Controller
 {
     public function news()
     {
-        $posts = Post::latest()->simplePaginate(5);
-        $categories = Category::all();
-        return view('site.news', compact('posts', 'categories'));
+        $search = request()->query('search');
+        if ($search) {
+            $posts = Post::where('body', 'LIKE', "%{$search}%")->simplePaginate(1);
+        } else {
+            $posts = Post::simplePaginate(1);
+        }
+
+        return view('site.news', compact('posts'));
     }
 
     public function contact()

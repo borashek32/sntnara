@@ -3,8 +3,8 @@
 @section('title-block')СНТ НАРА@endsection('title-block')
 
 @section('content')
-    <h2>Новости</h2>
-    @forelse($posts as $post)
+    <h2>Вы искали: {{ $search }}</h2>
+    @foreach($posts as $post)
         <div class="card mb-4 bg-primary">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Категория: {{ $post->category->name }}</li>
@@ -17,12 +17,8 @@
                 <li class="list-group-item"><a href="{{ route('post', $post->id) }}">Комментарии</a></li>
             </ul>
         </div>
-    @empty
-        <p class="text-center">
-            Ничего не найдено по вашему запросу <strong>{{ request()->query('search') }}</strong>
-        </p>
-    @endforelse
+    @endforeach
     <div class="text-center">
-        {{ $posts->appends(['search' => request()->query('search')])->links() }}
+        {{ $posts->links() }}
     </div>
 @endsection('content)

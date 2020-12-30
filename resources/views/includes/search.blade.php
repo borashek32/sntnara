@@ -1,5 +1,6 @@
-<input type="text" class="w-full shadow appearance-none border my-3 rounded py-2
-                        px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput1"
-       placeholder="Search posts:" name="search">
-@error('search')<span class="text-red-500">{{ $message }}</span>@enderror
+<form method="get" action="{{ route('news') }}" class="input-group mb-3">
+    <input type="text" class="form-control" style="margin-right: 10px" placeholder="Введите ключевые слова"
+           aria-label="Username" id="search" name="search" aria-describedby="basic-addon1">
+    <button type="submit" class="btn btn-secondary">Поиск</button>
+</form>
 
