@@ -20,6 +20,9 @@
                                         {{ $category->name }}
                                     </option>
                                 @endforeach
+                                @if($category_id)
+                                    {{ $category_id }}
+                                @endif
                                 @error('category_id') <span class="text-red-500">{{ $message }}</span>@enderror
                             </select>
                         </div>

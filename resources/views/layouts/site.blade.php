@@ -43,6 +43,7 @@
                             @include('includes.menu-left')
                         </div>
                         <div class="col-lg-8 col-md-6 col-sm-12 col-12">
+                            @include('includes.search')
                             @yield('content')
                         </div>
 {{--                        <div class="col-lg-2 col-md-3" id="adv">--}}

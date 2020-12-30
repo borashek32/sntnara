@@ -10,7 +10,7 @@ use Livewire\WithFileUploads;
 
 class Posts extends Component
 {
-    public $title, $categories, $category_id, $body, $post_id, $search, $img;
+    public $title, $categories, $category, $category_id, $body, $post_id, $search, $img;
     public $isOpen = 0;
 
     use WithFileUploads;
@@ -21,10 +21,12 @@ class Posts extends Component
         $this->categories = Category::all();
     }
 
-    public function render()
+    public function render(Category $id)
     {
+        $this->category = Category::find($id);
         $search = '%' . $this->search . '%';
         $posts = Post::where('title', 'LIKE', $search)
+            ->orWhere('category_id', '=', $id)
             ->orWhere('body', 'LIKE', $search)
             ->latest()
             ->paginate(5);

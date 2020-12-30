@@ -1,10 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\PostController;
 use App\Http\Livewire\Categories;
-use App\Http\Livewire\CategoryOne;
 use App\Http\Livewire\Posts;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Reviews;
@@ -19,7 +19,7 @@ Route::get('/reviews', [ReviewController::class, 'reviewsPost'])->name('reviews'
 Route::post('/reviews', [ReviewController::class, 'reviewsWrite'])->name('reviews-form');
 Route::get('/post/{id}', [PostController::class, 'post'])->name('post');
 Route::post('/post/{id}', [PostController::class, 'addComment'])->name('comment');
-Route::get('/news/category/{id}', CategoryOne::class)->name('category');
+Route::get('/news/category/{id}', [CategoryController::class, 'categories'])->name('category');
 
 // admin routes
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -28,3 +28,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('dashboard/posts', Posts::class)->name('posts');
 Route::get('dashboard/reviews', Reviews::class)->name('reviews-admin');
 Route::get('dashboard/categories', Categories::class)->name('categories');
+

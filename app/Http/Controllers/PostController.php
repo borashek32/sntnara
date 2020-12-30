@@ -13,10 +13,11 @@ class PostController extends Controller
 
     public function post(Post $id)
     {
+        $categories = Category::all();
         $post = Post::find($id);
         $category = Category::where('id', '=', 'category_id')->get();
 
-        return view('site.post', compact('category', 'post'));
+        return view('site.post', compact('category', 'post', 'categories'));
     }
 
 

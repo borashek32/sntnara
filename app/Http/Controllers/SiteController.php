@@ -15,12 +15,11 @@ use Jenssegers\Date\Date;
 
 class SiteController extends Controller
 {
-
     public function news()
     {
         $posts = Post::latest()->simplePaginate(5);
-
-        return view('site.news', compact('posts'));
+        $categories = Category::all();
+        return view('site.news', compact('posts', 'categories'));
     }
 
     public function contact()
