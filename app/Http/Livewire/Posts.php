@@ -21,12 +21,12 @@ class Posts extends Component
         $this->categories = Category::all();
     }
 
-    public function render(Category $id)
+    public function render()
     {
-        $this->category = Category::find($id);
+//        $this->category = Category::findOrFail($id);
         $search = '%' . $this->search . '%';
         $posts = Post::where('title', 'LIKE', $search)
-            ->orWhere('category_id', '=', $id)
+//            ->orWhere('category_id', $this)
             ->orWhere('body', 'LIKE', $search)
             ->latest()
             ->paginate(5);

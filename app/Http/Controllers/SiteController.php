@@ -19,9 +19,12 @@ class SiteController extends Controller
     {
         $search = request()->query('search');
         if ($search) {
-            $posts = Post::where('body', 'LIKE', "%{$search}%")->simplePaginate(1);
+            $posts = Post::where('body', 'LIKE', "%{$search}%")
+                ->orWhere('title', 'LIKE', "%{$search}%")
+                ->latest()
+                ->simplePaginate(5);
         } else {
-            $posts = Post::simplePaginate(1);
+            $posts = Post::latest()->simplePaginate(5);
         }
 
         return view('site.news', compact('posts'));

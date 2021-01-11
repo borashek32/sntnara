@@ -21,11 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="ff671317-17ac-4ee0-81bc-896e38b58a71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/includes/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_10_111246_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_10_111246_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_23_163429_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_23_163429_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/PermissionsDemoSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PermissionsDemoSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/categories/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categories/categories.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +165,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
-      <path value="$PROJECT_DIR$/vendor/anhskohbo/no-captcha" />
     </include_path>
   </component>
   <component name="ProjectId" id="1leTAoEJOOWDOwprbQZWzDGNaEw" />
@@ -171,24 +175,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/site" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/site" />
-      <recent name="$PROJECT_DIR$/app/Http/Livewire" />
-      <recent name="$PROJECT_DIR$/resources/views/livewire/categories" />
-      <recent name="$PROJECT_DIR$/resources/views/livewire/posts" />
-      <recent name="$PROJECT_DIR$/resources/views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/livewire/posts" />
+      <recent name="$PROJECT_DIR$/resources/views/" />
+      <recent name="$PROJECT_DIR$/resources/views/livewire/categories" />
       <recent name="$PROJECT_DIR$/resources/views/site" />
       <recent name="$PROJECT_DIR$/resources/views/includes" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/resources/views/livewire/categories" />
-      <recent name="$PROJECT_DIR$/resources/views/livewire" />
-      <recent name="$PROJECT_DIR$/resources/views/livewire/posts" />
     </key>
   </component>
   <component name="RunManager">
@@ -210,6 +211,9 @@
       <workItem from="1608402430188" duration="22290000" />
       <workItem from="1608573231118" duration="1104000" />
       <workItem from="1608735077538" duration="12558000" />
+      <workItem from="1608839575302" duration="6245000" />
+      <workItem from="1610379044104" duration="131000" />
+      <workItem from="1610387649949" duration="5416000" />
     </task>
     <servers />
   </component>
@@ -229,29 +233,22 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="485" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609272357224">
+    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608740545780">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="485" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1609272357224" />
-    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609104761913">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1608740545780" />
+    <state x="458" y="215" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608839591078">
+      <screen x="0" y="23" width="1440" height="814" />
     </state>
-    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1609104761913" />
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609357667744">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1609357667744" />
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1608754768851" />
+    <state x="458" y="215" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.814@0.23.1440.814" timestamp="1608839591078" />
     <state x="442" y="183" key="NewPhpClassDialog" timestamp="1608428403984">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="442" y="183" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1608428403984" />
-    <state x="539" y="380" key="NewPhpFileDialog" timestamp="1609283388779">
+    <state x="539" y="380" key="NewPhpFileDialog" timestamp="1608742880068">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="539" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1609283388779" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1609357884358">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1609357884358" />
+    <state x="539" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1608742880068" />
   </component>
 </project>

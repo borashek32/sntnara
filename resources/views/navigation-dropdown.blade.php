@@ -9,7 +9,7 @@
                         <img src="/img/sntnara_logo.jpg" width="100">
                     </a>
                 </div>
-
+            @if(Auth::user()->hasRole('super-admin'))
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-top: 20px">
                     <x-jet-nav-link href="{{ route('categories') }}" :active="request()->routeIs('dashboard')">
@@ -37,7 +37,7 @@
                     </x-jet-nav-link>
                 </div>
             </div>
-
+        @endif
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-jet-dropdown align="right" width="48">
@@ -68,6 +68,10 @@
                         <x-jet-dropdown-link href="{{ route('profile.show') }}">
                             {{ __('Профиль') }}
                         </x-jet-dropdown-link>
+                    @if(Auth::user()->hasRole('super-admin'))
+                        <x-jet-dropdown-link href="{{ route('categories') }}">
+                            {{ __('Категории постов') }}
+                        </x-jet-dropdown-link>
 
                         <x-jet-dropdown-link href="{{ route('posts') }}">
                             {{ __('Посты') }}
@@ -76,7 +80,7 @@
                         <x-jet-dropdown-link href="{{ route('reviews-admin') }}">
                             {{ __('Отзывы') }}
                         </x-jet-dropdown-link>
-
+                    @endif
 {{--                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())--}}
 {{--                            <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">--}}
 {{--                                {{ __('API Tokens') }}--}}
