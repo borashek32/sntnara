@@ -20,6 +20,7 @@ Route::post('/reviews', [ReviewController::class, 'reviewsWrite'])->name('review
 Route::get('/post/{id}', [PostController::class, 'post'])->name('post');
 Route::post('/post/{id}', [PostController::class, 'addComment'])->name('comment');
 Route::get('/news/category/{id}', [CategoryController::class, 'categories'])->name('category');
+Route::post('/post', [PostController::class, 'reply'])->name('reply');
 
 // admin routes
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -36,6 +36,28 @@
                     </p>
                 </li>
                 <li class="list-group-item w-40">{{ $comment->body }}</li>
+                <li class="list-group-item w-40">
+                    <form method="POST" action="{{ route('reply', $comment->id) }}">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                        @if(auth()->user())
+                            <h6 style="margin-left:20px;margin-top:20px">{{ Auth::user()->name }}</h6>
+                        @endif
+                        <textarea name="body" rows="2" id="body" class="form-control" style="margin-left:20px;"
+                                  placeholder="Ответьте на комментарий" required minlength="5"></textarea>
+                        <input type="submit" value="Ответить" class="btn btn-md btn-success"
+                               style="width:100px;height:35px;margin-bottom:10px;margin-top:5px;margin-left:20px;">
+                    </form>
+                </li>
+{{--                @foreach($comment->replies as $reply)--}}
+{{--                    <li class="list-group-item w-40" style="margin-left:20px;">--}}
+{{--                        {{ $reply->user->name }}--}}
+{{--                        <p style="font-size:12px">--}}
+{{--                            {{ Date::parse($reply->created_at)->format('j F Y') }}--}}
+{{--                        </p>--}}
+{{--                    </li>--}}
+{{--                    <li class="list-group-item w-40" style="margin-left:20px;">{{ $reply->body }}</li>--}}
+{{--                @endforeach--}}
             </ul>
         </div>
     @endforeach
