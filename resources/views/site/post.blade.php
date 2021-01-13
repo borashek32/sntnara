@@ -1,19 +1,17 @@
 @extends('layouts.site')
 @section('title-block')СНТ НАРА@endsection('title-block')
 @section('content')
-    @foreach($post as $post)
-        <div class="card mb-4 bg-primary">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Категория: {{ $post->category->name }}</li>
-                <li class="list-group-item w-40" style="display: flex; justify-content: center;">
-                    <img src="{{ url('/storage/docs/' . $post->img) }}" class="image" alt="{{ $post->title }}" />
-                </li>
-                <li class="list-group-item">{{ Date::parse($post->created_at)->format('j F Y') }}</li>
-                <li class="list-group-item">{{ $post->title }}</li>
-                <li class="list-group-item">{{ $post->body }}</li>
-            </ul>
-        </div>
-    @endforeach
+    <div class="card mb-4 bg-primary">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Категория: {{ $post->category->name }}</li>
+            <li class="list-group-item w-40" style="display: flex; justify-content: center;">
+                <img src="{{ url('/storage/docs/' . $post->img) }}" class="image" alt="{{ $post->title }}" />
+            </li>
+            <li class="list-group-item">{{ Date::parse($post->created_at)->format('j F Y') }}</li>
+            <li class="list-group-item">Название: <strong>{{ $post->title }}</strong></li>
+            <li class="list-group-item">{{ $post->body }}</li>
+        </ul>
+    </div>
     <div class="card mb-4" style="padding:20px">
         <form method="POST" action="{{ route('comment', $post->id) }}">
             {{ csrf_field() }}

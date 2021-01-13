@@ -21,16 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ff671317-17ac-4ee0-81bc-896e38b58a71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_10_111246_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_10_111246_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_23_163429_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_23_163429_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PermissionsDemoSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PermissionsDemoSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/categories/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categories/categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/category-one.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/category-one.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/post.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +208,7 @@
       <workItem from="1608735077538" duration="12558000" />
       <workItem from="1608839575302" duration="6245000" />
       <workItem from="1610379044104" duration="131000" />
-      <workItem from="1610387649949" duration="5416000" />
+      <workItem from="1610387649949" duration="8629000" />
     </task>
     <servers />
   </component>

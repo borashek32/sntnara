@@ -11,7 +11,9 @@ class CategoryController extends Controller
     public function categories($id)
     {
         $category = Category::find($id);
-        $posts = Post::where('category_id', $id)->latest()->simplePaginate(1);
+        $posts = Post::where('category_id', $id)
+            ->latest()
+            ->simplePaginate(5);
 
         return view('site/category-one', compact( 'category', 'posts'));
     }

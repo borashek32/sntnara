@@ -13,11 +13,11 @@ class PostController extends Controller
 
     public function post(Post $id)
     {
-        $categories = Category::all();
-        $post = Post::find($id);
-        $category = Category::where('id', '=', 'category_id')->get();
+        $post = Post::find($id)->first();
+//        $category = Category::where('id', '=', 'category_id')->get();
+//dd($post);
 
-        return view('site.post', compact('category', 'post', 'categories'));
+        return view('site.post', compact('post'));
     }
 
 
@@ -35,6 +35,6 @@ class PostController extends Controller
         $comment->body = $request->input('body');
         $comment->save();
 
-        return back()->with('success', 'Ваше комментарий опубликован');
+        return back()->with('success', 'Ваш комментарий опубликован');
     }
 }
