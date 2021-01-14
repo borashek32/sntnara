@@ -17,9 +17,9 @@ Route::get('/map', [SiteController::class, 'map'])->name('map');
 Route::get('/documents', [SiteController::class, 'docs'])->name('docs');
 Route::get('/reviews', [ReviewController::class, 'reviewsPost'])->name('reviews');
 Route::post('/reviews', [ReviewController::class, 'reviewsWrite'])->name('reviews-form');
+Route::get('/news/category/{id}', [CategoryController::class, 'categories'])->name('category');
 Route::get('/post/{id}', [PostController::class, 'post'])->name('post');
 Route::post('/post/{id}', [PostController::class, 'addComment'])->name('comment');
-Route::get('/news/category/{id}', [CategoryController::class, 'categories'])->name('category');
 Route::post('/post', [PostController::class, 'reply'])->name('reply');
 
 // admin routes
@@ -29,4 +29,3 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('dashboard/posts', Posts::class)->name('posts');
 Route::get('dashboard/reviews', Reviews::class)->name('reviews-admin');
 Route::get('dashboard/categories', Categories::class)->name('categories');
-

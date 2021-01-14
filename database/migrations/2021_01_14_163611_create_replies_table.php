@@ -10,7 +10,16 @@ class CreateRepliesTable extends Migration
     {
         Schema::create('replies', function (Blueprint $table) {
             $table->id();
-            $table->integer('comment_id');
+            $table->integer('comment_id')
+                ->references('id')
+                ->on('comments')
+                ->onUpdate('cascade')
+                ->onDelete('some action');
+            $table->integer('post_id')
+                ->references('id')
+                ->on('posts')
+                ->onUpdate('cascade')
+                ->onDelete('some action');
             $table->integer('user_id');
             $table->string('body', 1000);
             $table->timestamps();

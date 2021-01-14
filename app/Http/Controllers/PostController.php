@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
@@ -47,3 +46,4 @@ class PostController extends Controller
         return back()->with('success', 'Ваш ответ опубликован');
     }
 }
+
