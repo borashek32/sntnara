@@ -40,6 +40,7 @@ class PostController extends Controller
         $reply = new Reply();
         $reply->user_id = auth()->user()->id;
         $reply->comment_id = $request->get('comment_id');
+        $reply->post_id = $request->get('post_id');
         $reply->body = $request->input('body');
         $reply->save();
 
