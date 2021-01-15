@@ -7,10 +7,10 @@ use App\Models\Post;
 use App\Models\Comment;
 use App\Models\User;
 use App\Models\Reply;
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
-
     public function post(Post $id)
     {
         $post = Post::find($id)->first();
@@ -42,6 +42,11 @@ class PostController extends Controller
         $reply->post_id = $request->get('post_id');
         $reply->body = $request->input('body');
         $reply->save();
+
+        Mail::send(['text' => 'dynamic_email_get-replies'], ['reply' => $reply], function ($message){
+            $message->to('borashek@inbox.ru')->subject('Получен новый ответ на ваш комментарий на сайте СНТ НАРА');
+            $message->from('borashek29@gmail.com', 'СНТ НАРА');
+        });
 
         return back()->with('success', 'Ваш ответ опубликован');
     }
