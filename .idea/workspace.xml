@@ -22,7 +22,8 @@
     <list default="true" id="ff671317-17ac-4ee0-81bc-896e38b58a71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dynamic_email_get-replies.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dynamic_email_get-replies.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/post.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +210,7 @@
       <workItem from="1610379044104" duration="131000" />
       <workItem from="1610387649949" duration="19744000" />
       <workItem from="1610633145099" duration="9331000" />
-      <workItem from="1610725040977" duration="8738000" />
+      <workItem from="1610725040977" duration="13498000" />
     </task>
     <servers />
   </component>
@@ -246,5 +247,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="539" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1608742880068" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1611086039858">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1611086039858" />
   </component>
 </project>

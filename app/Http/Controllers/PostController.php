@@ -40,11 +40,12 @@ class PostController extends Controller
         $reply->user_id = auth()->user()->id;
         $reply->comment_id = $request->get('comment_id');
         $reply->post_id = $request->get('post_id');
+        $reply->comment_author_email = $request->get('comment_author_email');
         $reply->body = $request->input('body');
         $reply->save();
 
-        Mail::send(['text' => 'dynamic_email_get-replies'], ['reply' => $reply], function ($message){
-            $message->to('borashek@inbox.ru')->subject('Получен новый ответ на ваш комментарий на сайте СНТ НАРА');
+        Mail::send(['text' => 'dynamic_email_get-replies'], ['reply' => $reply], function ($message) use ($reply) {
+            $message->to($reply->comment_author_email)->subject('Получен новый ответ на ваш комментарий на сайте СНТ НАРА');
             $message->from('borashek29@gmail.com', 'СНТ НАРА');
         });
 

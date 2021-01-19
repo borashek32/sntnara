@@ -55,8 +55,9 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="comment_id" value="{{ $comment->id }}">
                         <input type="hidden" name="post_id" value="{{ $post->id }}">
+                        <input type="hidden" name="comment_author_email" value="{{ $comment->user->email }}">
                         @if(auth()->user())
-                            <p style="font-weight:700;margin-left:80px;font-size:14px;">{{ $comment->user->name }}</p>
+                            <p style="font-weight:700;margin-left:80px;font-size:14px;">{{ Auth::user()->name }}</p>
                             <div class="row" style="margin-left:60px;">
                                 <div class="col-2">
                                     <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" class="rounded float-start" width="60px">
