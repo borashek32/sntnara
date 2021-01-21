@@ -21,12 +21,10 @@ class ReviewController extends Controller
         return view('site.review', compact('review'));
     }
 
-
-//    public function __construct()
-//    {
-//        $this->middleware('auth')->except('reviewsPost');
-//    }
-
+    public function __construct()
+    {
+        $this->middleware('auth')->except('reviewsPost', 'review');
+    }
 
     public function reviewsWrite(Request $req)
     {

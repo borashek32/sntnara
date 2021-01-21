@@ -22,12 +22,7 @@
     <list default="true" id="ff671317-17ac-4ee0-81bc-896e38b58a71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Review.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Review.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_14_163611_create_replies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_14_163611_create_replies_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dynamic_email_get-replies.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dynamic_email_get-replies.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/post.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/reviews.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/reviews.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +209,7 @@
       <workItem from="1610379044104" duration="131000" />
       <workItem from="1610387649949" duration="19744000" />
       <workItem from="1610633145099" duration="9331000" />
-      <workItem from="1610725040977" duration="20390000" />
+      <workItem from="1610725040977" duration="20807000" />
     </task>
     <servers />
   </component>

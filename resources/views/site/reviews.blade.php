@@ -49,14 +49,13 @@
                         </div>
                         <div class="col-10">
                             <p style="margin-bottom:10px;font-size:12px">{{ Date::parse($review->created_at)->format('j F Y') }}</p>
-                            <a href="{{ route('opinion', $review->id) }}">
-                                <p>
-                                    {{ $review->body }}
-                                </p>
-                            </a>
+                            <p>
+                                {{ $review->body }}
+                            </p>
                         </div>
                     </div>
                 </li>
+                <li class="list-group-item"><a href="{{ route('opinion', $review->id) }}">Комментарии</a></li>
             </ul>
         </div>
     @endforeach
