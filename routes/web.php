@@ -17,6 +17,8 @@ Route::get('/map', [SiteController::class, 'map'])->name('map');
 Route::get('/documents', [SiteController::class, 'docs'])->name('docs');
 Route::get('/reviews', [ReviewController::class, 'reviewsPost'])->name('reviews');
 Route::post('/reviews', [ReviewController::class, 'reviewsWrite'])->name('reviews-form');
+Route::get('/review/{id}', [ReviewController::class, 'review'])->name('review');
+Route::post('/review/{id}', [ReviewController::class, 'addOpinion'])->name('opinion');
 Route::get('/news/category/{id}', [CategoryController::class, 'categories'])->name('category');
 Route::get('/post/{id}', [PostController::class, 'post'])->name('post');
 Route::post('/post/{id}', [PostController::class, 'addComment'])->name('comment');

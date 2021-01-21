@@ -5,22 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Review extends Model
+class Opinion extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'review',
+        'body'
     ];
+
+    public function review()
+    {
+        return $this->belongsTo(Review::class);
+    }
 
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function opinions()
-    {
-        return $this->hasMany(Opinion::class);
     }
 }

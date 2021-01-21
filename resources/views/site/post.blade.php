@@ -30,6 +30,16 @@
                                style="width:200px;height:40px;margin-top:10px;">
                     </div>
                 </div>
+            @else
+                <p style="font-weight:600;font-size:14px">Войдите на сайт под своим именем или зарегистрируйтесь для того, чтобы оставить комментарий</p>
+                <div class="row">
+                    <div class="col-12">
+                        <textarea name="body" rows="4" id="body" class="form-control"
+                                  placeholder="Введите ваш комментарий" required minlength="5"></textarea>
+                        <input type="submit" value="Добавить комментарий" class="btn btn-md btn-success"
+                               style="width:200px;height:40px;margin-top:10px;">
+                    </div>
+                </div>
             @endif
         </form>
     </div>
@@ -62,6 +72,19 @@
                                 <div class="col-2">
                                     <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" class="rounded float-start" width="60px">
                                     <p style="font-size:8px">Зарегистрирован:<br>{{ Auth::user()->created_at->format('j F Y') }}</p>
+                                </div>
+                                <div class="col-10">
+                                    <textarea name="body" rows="2" id="body" class="form-control" style="width:100%;margin-left:-30px;"
+                                              placeholder="Ответьте на комментарий" required minlength="5"></textarea>
+                                    <input type="submit" value="Ответить" class="btn btn-md btn-success"
+                                           style="width:100px;height:35px;margin-bottom:10px;margin-left:-30px;margin-top:5px;">
+                                </div>
+                            </div>
+                        @else
+                            <p style="font-weight:700;font-size:14px;">Войдите на сайт под своим именем или зарегистрируйтесь для того, чтобы ответить на комментарий</p>
+                            <div class="row" style="margin-left:60px;">
+                                <div class="col-2">
+
                                 </div>
                                 <div class="col-10">
                                     <textarea name="body" rows="2" id="body" class="form-control" style="width:100%;margin-left:-30px;"
