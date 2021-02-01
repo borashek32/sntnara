@@ -3,20 +3,20 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Review;
+use App\Models\Comment;
 use Livewire\WithPagination;
 
-class Reviews extends Component
+class Comments extends Component
 {
-    public $body, $review_id;
+    public $post_id, $body, $user_id;
     public $isOpen = 0;
 
     use WithPagination;
 
     public function render()
     {
-        $reviews  = Review::all();
-        return view('livewire.reviews.reviews', ['reviews' => $reviews]);
+        $comments  = Comment::all();
+        return view('livewire.comments', ['comments' => $comments])->layout('layouts.app');
     }
 
     public function create()
@@ -37,22 +37,21 @@ class Reviews extends Component
 
     private function resetInputFields(){
         $this->body = '';
-        $this->review_id = '';
+        $this->comment_id = '';
     }
 
     public function store()
     {
         $this->validate([
             'body' => 'required',
-            'review' => 'required',
         ]);
 
-        Review::updateOrCreate(['id' => $this->review_id], [
-            'body' => $this->review
+        Comment::updateOrCreate(['id' => $this->comment_id], [
+            'body' => $this->body
         ]);
 
         session()->flash('message',
-            $this->review_id ? 'Отзыв успешно обновлен.' : 'Отзыв успешно создан.');
+            $this->comment_id ? 'Комментарий успешно обновлен.' : 'Отзыв успешно создан.');
 
         $this->closeModal();
         $this->resetInputFields();
@@ -60,15 +59,15 @@ class Reviews extends Component
 
     public function edit($id)
     {
-        $review = Review::findOrFail($id);
-        $this->review_id = $id;
-        $this->body = $review->body;
+        $comment = Comment::findOrFail($id);
+        $this->comment_id = $id;
+        $this->body = $comment->body;
         $this->openModal();
     }
 
     public function delete($id)
     {
-        Review::find($id)->delete();
-        session()->flash('message', 'Отзыв успешно удален.');
+        Comment::find($id)->delete();
+        session()->flash('message', 'Комментарий успешно удален.');
     }
 }

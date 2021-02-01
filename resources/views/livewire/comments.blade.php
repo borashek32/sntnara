@@ -1,6 +1,6 @@
 <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Управление отзывами
+        Управление комментариями
     </h2>
 </x-slot>
 <div class="py-4">
@@ -18,7 +18,7 @@
             <div class="flex md:flex-row w-full">
                 <div class="w-full md:w-3/10 text-left">
                     @if($isOpen)
-                        @include('livewire.reviews.create')
+                        @include('livewire.comments.create')
                     @endif
                 </div>
                 <div class="w-full md:w-8/10 text-center">
@@ -38,21 +38,21 @@
                 <tr class="bg-gray-100">
                     <th class="border px-4 py-2 w-2">No.</th>
                     <th class="border px-4 py-2 w-10">Дата</th>
-                    <th class="border px-4 py-2 w-10">Имя</th>
-                    <th class="border px-4 py-2 w-24">Отзыв или предложение</th>
+                    <th class="border px-4 py-2 w-10">Имя пользователя</th>
+                    <th class="border px-4 py-2 w-24">Комментарий</th>
                     <th class="border px-4 py-2 w-10">Действие</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($reviews as $review)
+                @foreach($comments as $comment)
                     <tr>
-                        <td class="border px-4 py-2">{{ $review->id }}</td>
-                        <td class="border px-4 py-2">{{ $review->created_at }}</td>
-                        <td class="border px-4 py-2">{{ $review->user->name }}</td>
-                        <td class="border px-4 py-2">{{ $review->body }}</td>
+                        <td class="border px-4 py-2">{{ $comment->id }}</td>
+                        <td class="border px-4 py-2">{{ $comment->created_at }}</td>
+                        <td class="border px-4 py-2">{{ $comment->user->name }}</td>
+                        <td class="border px-4 py-2">{{ $comment->body }}</td>
                         <td class="border px-4 py-2">
-                            <button wire:click="edit({{ $review->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Редактировать</button>
-                            <button wire:click="delete({{ $review->id }})" class="mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Удалить</button>
+                            <button wire:click="edit({{ $comment->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Редактировать</button>
+                            <button wire:click="delete({{ $comment->id }})" class="mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Удалить</button>
                         </td>
                     </tr>
                 @endforeach

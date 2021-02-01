@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
@@ -11,12 +12,13 @@ use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
-    public function post(Post $id)
-    {
-        $post = Post::find($id)->first();
-
-        return view('site.post', compact('post'));
-    }
+//    public function post(Post $id)
+//    {
+//        $post = Post::find($id)->first();
+//        $categories = Category::all();
+//
+//        return view('site.post', compact('post', 'categories'));
+//    }
 
     public function __construct()
     {

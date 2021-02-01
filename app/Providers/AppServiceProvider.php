@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $categories = Category::orderBy('id')->get();
         View::share([
-            'categories' => $categories
+            'categories.blade.php' => $categories
         ]);
         Date::setLocale(config('app.locale'));
     }

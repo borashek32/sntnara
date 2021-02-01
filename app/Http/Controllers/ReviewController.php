@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Opinion;
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -11,14 +12,18 @@ class ReviewController extends Controller
 {
     public function reviewsPost()
     {
-        return view('site.reviews', ['reviews' => Review::all()]);
+        $categories = Category::all();
+        $reviews = Review::all();
+
+        return view('site.reviews', compact('reviews', 'categories'));
     }
 
     public function review(Review $id)
     {
         $review = Review::find($id)->first();
+        $categories = Category::all();
 
-        return view('site.review', compact('review'));
+        return view('site.review', compact('review', 'categories'));
     }
 
     public function __construct()

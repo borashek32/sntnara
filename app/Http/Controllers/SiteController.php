@@ -10,13 +10,18 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Post;
-use Jenssegers\Date\Date;
-
 
 class SiteController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('news', 'contact', 'map', 'docs');
+    }
+
     public function news()
     {
+        $categories = Category::all();
         $search = request()->query('search');
         if ($search) {
             $posts = Post::where('body', 'LIKE', "%{$search}%")
@@ -27,17 +32,21 @@ class SiteController extends Controller
             $posts = Post::latest()->simplePaginate(5);
         }
 
-        return view('site.news', compact('posts'));
+        return view('site.news', compact('categories', 'posts'));
     }
 
     public function contact()
     {
-        return view('site.contact');
+        $categories = Category::all();
+
+        return view('site.contact', compact('categories'));
     }
 
     public function map()
     {
-        return view('site.map');
+        $categories = Category::all();
+
+        return view('site.map', compact('categories'));
     }
 
     public function docs()

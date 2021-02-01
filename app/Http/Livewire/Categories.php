@@ -13,7 +13,7 @@ class Categories extends Component
     public function render()
     {
         $categories  = Category::all();
-        return view('livewire.categories.categories', ['categories' => $categories]);
+        return view('livewire.categories1', ['categories' => $categories]);
     }
 
     public function create()

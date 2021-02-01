@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->integer('category_id')
                 ->references('id')
-                ->on('categories')
+                ->on('categories.blade.php')
                 ->onUpdate('cascade')
                 ->onDelete('some action');
             $table->string('img', 200);
