@@ -39,8 +39,9 @@
                 <tr class="bg-gray-100">
                     <th class="border px-4 py-2 w-2">No.</th>
                     <th class="border px-4 py-2 w-10">Дата</th>
-                    <th class="border px-4 py-2 w-20">Название</th>
-                    <th class="border px-4 py-2 w-16">Действие</th>
+                    <th class="border px-4 py-2 w-10">Название</th>
+                    <th class="border px-4 py-2 w-10">Кол-во постов</th>
+                    <th class="border px-4 py-2 w-20">Действие</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,7 @@
                         <td class="border px-4 py-2">{{ $category->id }}</td>
                         <td class="border px-4 py-2">{{ Date::parse($category->created_at)->format('j F Y') }}</td>
                         <td class="border px-4 py-2">{{ $category->name }}</td>
+                        <td class="border px-4 py-2">{{ $category->posts->count() }}</td>
                         <td class="border px-4 py-2">
                             <button wire:click="edit({{ $category->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Редактировать</button>
                             <button wire:click="delete({{ $category->id }})" class="mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Удалить</button>
