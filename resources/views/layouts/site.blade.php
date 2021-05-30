@@ -35,7 +35,6 @@
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         @include('includes.contact_button')
                     </div>
-                    @include('includes.messages_success')
                 </div>
                 <div class="body-content">
                     <div class="row">

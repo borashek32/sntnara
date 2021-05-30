@@ -16,7 +16,7 @@ class Reviews extends Component
     public function render()
     {
         $reviews  = Review::all();
-        return view('livewire.reviews.reviews', ['reviews' => $reviews]);
+        return view('admin.reviews.reviews', ['reviews' => $reviews]);
     }
 
     public function create()

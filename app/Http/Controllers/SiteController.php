@@ -35,7 +35,7 @@ class SiteController extends Controller
 
     public function docs()
     {
-        //return view('site.docs');
+        return view('site.docs');
     }
 
     protected function validator(array $data)

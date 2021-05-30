@@ -20,7 +20,7 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-dropdown')
+            @include('includes.navigation-dropdown')
 
             <!-- Page Heading -->
             <header class="bg-white shadow">

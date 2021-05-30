@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use Livewire\Component;
 use App\Models\Post;
 use Livewire\WithPagination;
@@ -9,11 +10,16 @@ use Livewire\WithFileUploads;
 
 class Posts extends Component
 {
-    public $title, $body, $post_id, $search, $img;
+    public $title, $body, $post_id, $search, $img,  $categories, $category_id;
     public $isOpen = 0;
 
     use WithFileUploads;
     use WithPagination;
+
+    public function mount()
+    {
+        $this->categories = Category::all();
+    }
 
     public function render()
     {
@@ -21,7 +27,7 @@ class Posts extends Component
         $posts  = Post::where('title', 'LIKE', $search)
             ->orWhere('body', 'LIKE', $search)
             ->latest()->paginate(5);
-        return view('livewire.posts', ['posts' => $posts]);
+        return view('admin.posts.posts', ['posts' => $posts]);
     }
 
     public function create()
@@ -41,6 +47,7 @@ class Posts extends Component
     }
 
     private function resetInputFields(){
+        $this->category_id = '';
         $this->title = '';
         $this->body = '';
         $this->post_id = '';
@@ -49,12 +56,14 @@ class Posts extends Component
     public function store()
     {
         $this->validate([
+            'category_id'   => 'required',
             'title'   => 'required',
             'body'    => 'required',
             'img'     => 'image|max:1024'
         ]);
 
         Post::updateOrCreate(['id' => $this->post_id], [
+            'category_id'    => $this->category_id,
             'title'    => $this->title,
             'body'     => $this->body,
             'img'      => $this->img->hashName(),
@@ -75,6 +84,7 @@ class Posts extends Component
     {
         $post = Post::findOrFail($id);
         $this->post_id    = $id;
+        $this->category_id      = $post->category_id;
         $this->title      = $post->title;
         $this->body       = $post->body;
         $this->img        = $post->img;

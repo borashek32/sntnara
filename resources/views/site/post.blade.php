@@ -14,6 +14,7 @@
             </ul>
         </div>
     @endforeach
+    @include('includes.messages_success')
     <div class="card mb-4" style="padding:20px">
         <form method="POST" action="{{ route('comment', $post->id) }}">
             {{ csrf_field() }}

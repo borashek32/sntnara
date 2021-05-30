@@ -21,6 +21,6 @@ class ContactMail extends Mailable
     public function build()
     {
         return $this->subject('письмо с сайта СНТ НАРА')->
-        from('borashek29@gmail.com')->view('dynamic_email_template')->with('data', [$this->data]);
+        from('mail.sntnara@gmail.com')->view('emails.dynamic_email_template')->with('data', [$this->data]);
     }
 }

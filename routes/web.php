@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SiteController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\BlogController;
 use App\Http\Livewire\Categories;
 use App\Http\Livewire\CategoryOne;
 use App\Http\Livewire\Posts;
@@ -17,14 +17,15 @@ Route::get('/map', [SiteController::class, 'map'])->name('map');
 Route::get('/documents', [SiteController::class, 'docs'])->name('docs');
 Route::get('/reviews', [ReviewController::class, 'reviewsPost'])->name('reviews');
 Route::post('/reviews', [ReviewController::class, 'reviewsWrite'])->name('reviews-form');
-Route::get('/post/{id}', [PostController::class, 'post'])->name('post');
-Route::post('/post/{id}', [PostController::class, 'addComment'])->name('comment');
+Route::get('/post/{id}', [BlogController::class, 'post'])->name('post');
+Route::post('/post/{id}', [BlogController::class, 'addComment'])->name('comment');
 Route::get('/news/category/{id}', CategoryOne::class)->name('category');
 
 // admin routes
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('includes/dashboard');
 })->name('dashboard');
 Route::get('dashboard/posts', Posts::class)->name('posts');
+Route::get('dashboard/post-edit/{id}', \App\Http\Livewire\PostEdit::class)->name('post-edit');
 Route::get('dashboard/reviews', Reviews::class)->name('reviews-admin');
 Route::get('dashboard/categories', Categories::class)->name('categories');
