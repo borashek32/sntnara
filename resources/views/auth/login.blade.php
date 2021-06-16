@@ -39,8 +39,14 @@
                     </a>
                 @endif
 
-                <x-jet-button class="ml-4">
+                <x-jet-button class="ml-4 mb-2">
                     {{ __('Войти') }}
+                </x-jet-button>
+
+                <x-jet-button class="ml-4">
+                    <a href="/sign-in/github">
+                        {{ __('Войти через GitHub') }}
+                    </a>
                 </x-jet-button>
             </div>
         </form>
