@@ -31,6 +31,19 @@ Route::get('dashboard/reviews', Reviews::class)->name('reviews-admin');
 Route::get('dashboard/categories', Categories::class)->name('categories');
 
 Route::group(['middleware' => 'guest'], function() {
-    Route::get('/sign-in/github', [\App\Http\Controllers\SocialController::class, 'github']);
+    Route::get('/sign-in/github', [\App\Http\Controllers\SocialController::class, 'github'])
+        ->name('github');
     Route::get('/sign-in/github/redirect', [\App\Http\Controllers\SocialController::class, 'githubRedirect']);
+
+    Route::get('/sign-in/facebook', [\App\Http\Controllers\SocialController::class, 'facebook'])
+        ->name('facebook');
+    Route::get('/sign-in/facebook/redirect', [\App\Http\Controllers\SocialController::class, 'facebookRedirect']);
+
+    Route::get('/sign-in/google', [\App\Http\Controllers\SocialController::class, 'google'])
+        ->name('google');
+    Route::get('/sign-in/google/redirect', [\App\Http\Controllers\SocialController::class, 'googleRedirect']);
+
+    Route::get('/sign-in/vkontakte', [\App\Http\Controllers\SocialController::class, 'vkontakte'])
+        ->name('vkontakte');
+    Route::get('/sign-in/vkontakte/redirect', [\App\Http\Controllers\SocialController::class, 'vkontakteRedirect']);
 });

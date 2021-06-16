@@ -42,10 +42,30 @@
                 <x-jet-button class="ml-4 mb-2">
                     {{ __('Войти') }}
                 </x-jet-button>
+            </div>
 
-                <x-jet-button class="ml-4">
-                    <a href="/sign-in/github">
+            <div class="flex items-center justify-end mt-4">
+                <x-jet-button class="ml-2">
+                    <a href="{{ route('github') }}">
                         {{ __('Войти через GitHub') }}
+                    </a>
+                </x-jet-button>
+
+                <x-jet-button class="ml-2">
+                    <a href="{{ route('facebook') }}">
+                        {{ __('Войти через FaceBook') }}
+                    </a>
+                </x-jet-button>
+
+                <x-jet-button class="ml-2">
+                    <a href="{{ route('google') }}">
+                        {{ __('Войти через Google') }}
+                    </a>
+                </x-jet-button>
+
+                <x-jet-button class="ml-2">
+                    <a href="{{ route('vkontakte') }}">
+                        {{ __('Войти через VKontakte') }}
                     </a>
                 </x-jet-button>
             </div>
